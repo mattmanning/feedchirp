@@ -3,7 +3,6 @@ class CreateFeeds < ActiveRecord::Migration
     create_table :feeds do |t|
       t.string :url
       t.string :title
-      t.timestamp :last_modified
 
       t.timestamps
     end
