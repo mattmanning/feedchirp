@@ -1,4 +1,6 @@
 Rsstweet::Application.routes.draw do
+  resources :feeds
+
   root to: 'home#index'
   get '/auth/twitter/callback', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy'
