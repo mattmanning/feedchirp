@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: [:show, :edit, :update, :destroy]
+  before_filter :enforce_login
 
   # GET /feeds
   # GET /feeds.json
