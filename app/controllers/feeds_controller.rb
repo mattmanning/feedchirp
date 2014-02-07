@@ -37,38 +37,13 @@ class FeedsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /feeds/1
-  # PATCH/PUT /feeds/1.json
-  def update
-    respond_to do |format|
-      if @feed.update(feed_params)
-        format.html { redirect_to @feed, notice: 'Feed was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /feeds/1
   # DELETE /feeds/1.json
   def destroy
-    @feed.destroy
+    current_user.user_feeds.find_by_feed_id(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to feeds_url }
       format.json { head :no_content }
     end
   end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_feed
-      @feed = Feed.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def feed_params
-      params.require(:feed).permit(:url, :title, :last_modified)
-    end
 end
