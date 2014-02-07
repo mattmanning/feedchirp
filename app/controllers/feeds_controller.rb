@@ -26,11 +26,12 @@ class FeedsController < ApplicationController
   # POST /feeds
   # POST /feeds.json
   def create
-    @feed = Feed.new(url: params[:feed][:url])
+    url = params[:feed][:url]
+    @feed = Feed.find_by_url(url) || Feed.new(url: url)
 
     respond_to do |format|
       if @feed.save
-        current_user.feeds << @feed
+        current_user.feeds << @feed unless current_user.feeds.include? @feed
         format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
         format.json { render action: 'show', status: :created, location: @feed }
       else
