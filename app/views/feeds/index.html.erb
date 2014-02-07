@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Url</th>
       <th>Title</th>
+      <th>Url</th>
       <th>Last modified</th>
       <th></th>
       <th></th>
@@ -13,11 +13,11 @@
   </thead>
 
   <tbody>
-    <% @feeds.each do |feed| %>
+    <% @user_feeds.each do |feed| %>
       <tr>
-        <td><%= feed.url %></td>
-        <td><%= feed.title %></td>
-        <td><%= feed.last_modified %></td>
+        <td><%= @user_feed.feed.title %></td>
+        <td><%= @user_feed.feed.url %></td>
+        <td><%= @user_feed.feed.last_modified %></td>
         <td><%= link_to 'Show', feed %></td>
         <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
         <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
