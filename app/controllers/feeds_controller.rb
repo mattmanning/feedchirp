@@ -4,7 +4,7 @@ class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.json
   def index
-    @user_feeds = UserFeed.find_all_by_user_id current_user.id
+    @user_feeds = UserFeed.find_all_by_user_id(current_user.id)
   end
 
   # GET /feeds/1
@@ -14,7 +14,7 @@ class FeedsController < ApplicationController
 
   # GET /feeds/new
   def new
-    @feed = Feed.new
+    @feed = current_user.feeds.new
   end
 
   # GET /feeds/1/edit

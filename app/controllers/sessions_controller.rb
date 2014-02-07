@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.find_by_uid(auth['uid'])
     user = User.create_with_omniauth(auth) unless user
     session[:user_id] = user.id
-    redirect_to root_url, :notice => 'Signed in!'
+    redirect_to feeds_url, :notice => 'Signed in!'
   end
 
   def destroy
