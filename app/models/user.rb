@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :feeds
+  has_many :user_feeds
+  has_many :feeds, through: :user_feeds
 
   def self.create_with_omniauth(auth)
     create! do |user|

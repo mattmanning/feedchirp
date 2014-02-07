@@ -1,3 +1,4 @@
 class Feed < ActiveRecord::Base
-  has_and_belongs_to_many :users
+  has_many :user_feeds
+  has_many :users, through: :user_feeds
 end
