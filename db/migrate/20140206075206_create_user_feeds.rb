@@ -1,6 +1,6 @@
-class CreateUsersFeeds < ActiveRecord::Migration
+class CreateUserFeeds < ActiveRecord::Migration
   def change
-    create_table :users_feeds do |t|
+    create_table :user_feeds do |t|
       t.belongs_to :user
       t.belongs_to :feed
       t.timestamp :last_updated

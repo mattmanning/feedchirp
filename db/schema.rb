@@ -23,17 +23,17 @@ ActiveRecord::Schema.define(version: 20140206075206) do
     t.datetime "updated_at"
   end
 
+  create_table "user_feeds", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "feed_id"
+    t.datetime "last_updated"
+  end
+
   create_table "users", force: true do |t|
     t.string   "uid"
     t.string   "screen_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "users_feeds", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "feed_id"
-    t.datetime "last_updated"
   end
 
 end
