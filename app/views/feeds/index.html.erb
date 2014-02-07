@@ -13,14 +13,13 @@
   </thead>
 
   <tbody>
-    <% @user_feeds.each do |feed| %>
+    <% @user_feeds.each do |user_feed| %>
       <tr>
-        <td><%= @user_feed.feed.title %></td>
-        <td><%= @user_feed.feed.url %></td>
-        <td><%= @user_feed.feed.last_modified %></td>
-        <td><%= link_to 'Show', feed %></td>
-        <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
-        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user_feed.feed.title %></td>
+        <td><%= user_feed.feed.url %></td>
+        <td><%= user_feed.last_updated %></td>
+        <td><%= link_to 'Show', user_feed.feed %></td>
+        <td><%= link_to 'Destroy', user_feed.feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
