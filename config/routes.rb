@@ -1,9 +1,13 @@
+require 'sidekiq/web'
+
 Rsstweet::Application.routes.draw do
   resources :feeds
 
   root to: 'home#index'
   get '/auth/twitter/callback', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy'
+
+  mount Sidekiq::Web, at: '/sidekiq'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
