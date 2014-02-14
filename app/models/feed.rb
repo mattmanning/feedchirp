@@ -4,7 +4,7 @@ class Feed < ActiveRecord::Base
   has_many :users, through: :user_feeds
 
   def fetch
-    @feed = Feedzirra::Feed.fetch_and_parse(url)
+    feed = Feedzirra::Feed.fetch_and_parse(url)
     update(title: feed.title)
     @entries = feed.entries
   end
