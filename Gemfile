@@ -14,6 +14,7 @@ gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
 gem 'turbolinks'
+gem 'twitter'
 gem 'uglifier', '>= 1.3.0'
 
 group :doc do
