@@ -16,7 +16,7 @@ class Tweeter
     @@url_length ||= @@client.configuration.short_url_length
   end
 
-  def tweet(screen_name, entry_title, entry_url feed_title)
+  def tweet(screen_name, entry_title, entry_url, feed_title)
     available_characters = 139 - screen_name.length - self.url_length - 2
     text = "@#{screen_name} "
     text += "#{entry_title} - #{feed_title}"[0..available_characters-1]
@@ -24,6 +24,6 @@ class Tweeter
   end
 
   def perform(screen_name, entry_title, entry_url, feed_title)
-    @@client.update tweet(screen_name, entry, feed_title)
+    @@client.update tweet(screen_name, entry_title, entry_url, feed_title)
   end
 end
