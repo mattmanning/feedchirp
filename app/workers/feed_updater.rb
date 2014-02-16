@@ -7,9 +7,9 @@ class FeedUpdater
     feed.user_feeds.each do |user_feed|
       feed.entries.each do |entry|
         next unless entry.published > (user_feed.last_updated || Time.at(0))
-        puts user_feed.user.id.to_s + " #{entry.title}"
-        #Tweeter.perform(user_feed.user.id, entry)
+        Tweeter.perform_async(user_feed.user.screen_name, entry, feed.title)
       end
+      user_feed.update(last_updated: feed.last_updated)
     end
   end
 end
