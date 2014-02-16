@@ -12,7 +12,7 @@ class Tweeter
     @@client
   end
 
-  def self.url_length
+  def url_length
     @@url_length ||= @@client.configuration.short_url_length
   end
 
