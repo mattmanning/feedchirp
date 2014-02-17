@@ -1,28 +1,39 @@
-== README
+# Feedchirp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Feedchirp is a Ruby on Rails app that checks for new entries in your RSS feeds
+and tweets the new ones at you.
 
-Things you may want to cover:
+Use it live at [https://feedchirp.herokuapp.com](https://feedchirp.herokuapp.com)
 
-* Ruby version
+Based on [PurpleWho's idea](http://www.reddit.com/r/SomebodyMakeThis/comments/1vv80z/a_twitter_rss_reader/) on Reddit.
 
-* System dependencies
+Most of the interesting stuff is in the 2 worker classes:
 
-* Configuration
+`app/workers/feed_updater.rb`
+`app/workers/tweeter.rb`
 
-* Database creation
+## Configuration
 
-* Database initialization
+If you want to run your own copy of this app, you'll need to set the following environment varialbles:
 
-* How to run the test suite
+* CLIENT_ACCESS_SECRET
+* CLIENT_ACCESS_TOKEN
+* CLIENT_CONSUMER_KEY
+* CLIENT_CONSUMER_SECRET
+* CONSUMER_KEY
+* CONSUMER_SECRET
+* DATABASE_URL
+* REDISTOGO_URL
+* SECRET_KEY_BASE
+* SIDEKIQ_PASSWORD
+* SIDEKIQ_USERNAME
 
-* Services (job queues, cache servers, search engines, etc.)
+## Dependencies
 
-* Deployment instructions
+Feedchirp assumes you're using PostgreSQL and Redis
 
-* ...
+## Testing
 
+This was a big spike, so there are no tests. I know. I'm a bad person :(
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I won't add any new features without tests. If you'd like to contribute to this project, testing would be a great place to start.
