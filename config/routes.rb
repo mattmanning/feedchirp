@@ -1,6 +1,6 @@
 require 'sidekiq/web'
 
-Rsstweet::Application.routes.draw do
+Feedchirp::Application.routes.draw do
   resources :feeds, except: :edit
 
   root to: 'home#index'

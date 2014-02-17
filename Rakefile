@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Rsstweet::Application.load_tasks
+Feedchirp::Application.load_tasks
