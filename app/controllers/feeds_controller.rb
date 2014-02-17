@@ -34,7 +34,7 @@ class FeedsController < ApplicationController
     respond_to do |format|
       if @feed.save
         current_user.feeds << @feed unless current_user.feeds.include? @feed
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
+        format.html { redirect_to @feed, notice: 'Feed was successfully added.' }
         format.json { render action: 'show', status: :created, location: @feed }
       else
         format.html { render action: 'new' }

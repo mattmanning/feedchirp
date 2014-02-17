@@ -18,7 +18,7 @@
         <td><%= user_feed.feed.title %></td>
         <td><%= user_feed.feed.url %></td>
         <td><%= user_feed.last_updated %></td>
-        <td><%= link_to 'Delete', user_feed.feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', user_feed.feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
