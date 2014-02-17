@@ -3,7 +3,7 @@
 Feedchirp is a Ruby on Rails app that checks for new entries in your RSS feeds
 and tweets the new ones at you.
 
-Use it live at [https://feedchirp.herokuapp.com](https://feedchirp.herokuapp.com)
+Use it live at [https://feedchirp.herokuapp.com](https://feedchirp.herokuapp.com).
 
 Based on [PurpleWho's idea](http://www.reddit.com/r/SomebodyMakeThis/comments/1vv80z/a_twitter_rss_reader/) on Reddit.
 
@@ -30,7 +30,7 @@ If you want to run your own copy of this app, you'll need to set the following e
 
 ## Dependencies
 
-Feedchirp assumes you're using PostgreSQL and Redis
+Feedchirp assumes you're using PostgreSQL and Redis.
 
 ## Testing
 
