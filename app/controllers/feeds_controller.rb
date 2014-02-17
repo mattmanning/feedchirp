@@ -20,10 +20,6 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.new
   end
 
-  # GET /feeds/1/edit
-  def edit
-  end
-
   # POST /feeds
   # POST /feeds.json
   def create

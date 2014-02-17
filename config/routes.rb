@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rsstweet::Application.routes.draw do
-  resources :feeds
+  resources :feeds, except: :edit
 
   root to: 'home#index'
   get '/auth/twitter/callback', to: 'sessions#create'
