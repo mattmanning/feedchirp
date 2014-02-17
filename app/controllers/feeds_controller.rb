@@ -29,6 +29,7 @@ class FeedsController < ApplicationController
   def create
     url = params[:feed][:url]
     @feed = Feed.find_by_url(url) || Feed.new(url: url)
+    @feed.fetch
 
     respond_to do |format|
       if @feed.save
