@@ -10,8 +10,9 @@ class FeedsController < ApplicationController
   # GET /feeds/1
   # GET /feeds/1.json
   def show
-    @feed = Feed.find(params[:id])
-    @user_feed = current_user.user_feeds.find_by_feed_id(@feed.id)
+    redirect_to @feeds
+    # @feed = Feed.find(params[:id])
+    # @user_feed = current_user.user_feeds.find_by_feed_id(@feed.id)
   end
 
   # GET /feeds/new
