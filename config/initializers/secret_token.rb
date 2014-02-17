@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Rsstweet::Application.config.secret_key_base = 'b975131b889c4b2f90c3d81dc7cd7041a20333b5a71473e70bd1567b04a85250b0a10fcb396ce0b306c087d79131917963f93260c163356dfb2341970f5f537e'
+Rsstweet::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
