@@ -18,8 +18,9 @@ class Tweeter
 
   def tweet(screen_name, entry_title, entry_url, feed_title)
     available_characters = 139 - screen_name.length - self.url_length - 2
+    unescaped_title = CGI.unescapeHTML(entry_title)
     text = "@#{screen_name} "
-    text += "#{entry_title} - #{feed_title}"[0..available_characters-1]
+    text += "#{unescaped_title} - #{feed_title}"[0..available_characters-1]
     text += " #{entry_url}"
   end
 
