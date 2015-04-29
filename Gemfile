@@ -4,7 +4,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.2'
 
 gem 'coffee-rails', '~> 4.0.0'
-gem 'feedzirra'
+gem 'feedjira'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
 gem 'omniauth-twitter'
