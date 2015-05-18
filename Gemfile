@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 gem 'rails', '4.0.2'
 
+gem 'clockwork'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'feedjira'
 gem 'jbuilder', '~> 1.2'
