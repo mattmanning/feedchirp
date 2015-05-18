@@ -1,0 +1,22 @@
+web:
+  build: .
+  command: bin/web
+  environment:
+   - SECRET_KEY_BASE
+   - SIDEKIQ_USERNAME
+   - SIDEKIQ_PASSWORD
+  links:
+   - postgres
+   - redis
+  ports:
+   - "3000:3000"
+sidekiq:
+  build: .
+  command: bin/sidekiq
+  links:
+   - postgres
+   - redis
+postgres:
+  image: convox/postgres
+redis:
+  image: convox/redis

@@ -1,0 +1,5 @@
+FROM convox/cedar
+
+EXPOSE 3000
+
+ENV PORT 3000
