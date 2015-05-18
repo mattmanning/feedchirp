@@ -16,6 +16,12 @@ sidekiq:
   links:
    - postgres
    - redis
+clock:
+  build: .
+  command: bin/clock
+  links:
+   - postgres
+   - redis
 postgres:
   image: convox/postgres
 redis:
