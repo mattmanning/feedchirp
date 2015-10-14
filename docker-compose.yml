@@ -20,6 +20,8 @@ web:
     - redis
   ports:
     - "80:3000"
+  volumes:
+    - .:/app
 sidekiq:
   build: .
   command: bin/sidekiq
