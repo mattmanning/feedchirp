@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
-gem 'rails', '4.0.2'
+ruby '2.2.2'
+gem 'rails', '4.0.13'
 
 gem 'clockwork'
 gem 'coffee-rails', '~> 4.0.0'
