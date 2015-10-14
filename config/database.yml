@@ -1,8 +1,0 @@
-development:
-  adapter: postgresql
-  database: rsstweet-dev
-
-test:
-  adapter: postgresql
-  database: rsstweet-test
-  

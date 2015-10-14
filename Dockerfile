@@ -1,5 +1,11 @@
-FROM convox/cedar
+FROM rails
 
-EXPOSE 3000
+WORKDIR /app
 
-ENV PORT 3000
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
+RUN bundle install
+
+COPY . /app
+
+CMD ["rails", "server", "-b", "0.0.0.0", "-P", "/tmp/server.pid"]
