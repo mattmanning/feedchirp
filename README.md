@@ -4,7 +4,7 @@ Feedchirp is a Ruby on Rails app that checks for new entries in your RSS feeds
 and tweets the new ones at you. Most of the interesting stuff is in the 2 worker classes, `app/workers/feed_updater.rb` and `app/workers/tweeter.rb`.
 
 
-Use it live at [https://feedchirp.herokuapp.com](https://feedchirp.herokuapp.com).
+Use it live at [http://www.feedchirp.com](http://www.feedchirp.com).
 
 Based on [PurpleWho's idea](http://www.reddit.com/r/SomebodyMakeThis/comments/1vv80z/a_twitter_rss_reader/) on Reddit.
 
