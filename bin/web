@@ -1,3 +1,8 @@
 #!/bin/bash
 
+if [ $RACK_ENV == "development" ]
+  then
+    bundle exec rake db:migrate
+fi
+
 bundle exec rails s -b 0.0.0.0 -p $PORT
