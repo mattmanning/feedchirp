@@ -2,26 +2,48 @@ web:
   build: .
   command: bin/web
   environment:
-   - SECRET_KEY_BASE
-   - SIDEKIQ_USERNAME
-   - SIDEKIQ_PASSWORD
+    - CLIENT_ACCESS_SECRET
+    - CLIENT_ACCESS_TOKEN
+    - CLIENT_CONSUMER_KEY
+    - CLIENT_CONSUMER_SECRET
+    - CONSUMER_KEY
+    - CONSUMER_SECRET
+    - DATABASE_URL=postgres://postgres:password@postgres:5432/app
+    - RACK_ENV=development
+    - REDIS_URL=redis://redis:password@redis:6379/0
+    - SECRET_KEY_BASE
+    - SIDEKIQ_USERNAME
+    - SIDEKIQ_PASSWORD
   links:
-   - postgres
-   - redis
+    - postgres
+    - redis
   ports:
-   - "3000:3000"
+    - "80:3000"
 sidekiq:
   build: .
   command: bin/sidekiq
+  environment:
+    - CLIENT_ACCESS_SECRET
+    - CLIENT_ACCESS_TOKEN
+    - CLIENT_CONSUMER_KEY
+    - CLIENT_CONSUMER_SECRET
+    - CONSUMER_KEY
+    - CONSUMER_SECRET
+    - DATABASE_URL=postgres://postgres:password@postgres:5432/app
+    - RACK_ENV=development
+    - REDIS_URL=redis://redis:password@redis:6379/0
+    - SECRET_KEY_BASE
+    - SIDEKIQ_USERNAME
+    - SIDEKIQ_PASSWORD
   links:
-   - postgres
-   - redis
+    - postgres
+    - redis
 clock:
   build: .
   command: bin/clock
   links:
-   - postgres
-   - redis
+    - postgres
+    - redis
 postgres:
   image: convox/postgres
 redis:
