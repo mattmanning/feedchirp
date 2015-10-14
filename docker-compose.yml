@@ -42,6 +42,9 @@ sidekiq:
 clock:
   build: .
   command: bin/clock
+  environment:
+    - DATABASE_URL=postgres://postgres:password@postgres:5432/app
+    - REDIS_URL=redis://redis:password@redis:6379/0
   links:
     - postgres
     - redis
