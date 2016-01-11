@@ -35,6 +35,12 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <% if ENV['RAILS_ENV'] == 'production' %>
+      <script>
+        if (window.location.protocol != "https:")
+            location.href = location.href.replace(/^http:/, 'https:');
+      </script>
+    <% end %>
   </head>
   <body>
 
