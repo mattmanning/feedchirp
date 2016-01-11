@@ -9,6 +9,7 @@ RUN bundle install
 COPY . /app
 
 ENV DATABASE_URL=postgres://
+ENV PORT 3000
 
 RUN rake assets:precompile
 
