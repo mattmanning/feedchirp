@@ -8,14 +8,12 @@ web:
     - CLIENT_CONSUMER_SECRET
     - CONSUMER_KEY
     - CONSUMER_SECRET
-    - DATABASE_URL=postgres://postgres:password@postgres:5432/app
     - RACK_ENV=development
-    - REDIS_URL=redis://redis:password@redis:6379/0
     - SECRET_KEY_BASE
     - SIDEKIQ_USERNAME
     - SIDEKIQ_PASSWORD
   links:
-    - postgres
+    - database
     - redis
   ports:
     - "80:3000"
@@ -32,25 +30,25 @@ sidekiq:
     - CLIENT_CONSUMER_SECRET
     - CONSUMER_KEY
     - CONSUMER_SECRET
-    - DATABASE_URL=postgres://postgres:password@postgres:5432/app
     - RACK_ENV=development
-    - REDIS_URL=redis://redis:password@redis:6379/0
     - SECRET_KEY_BASE
     - SIDEKIQ_USERNAME
     - SIDEKIQ_PASSWORD
   links:
-    - postgres
+    - database
     - redis
 clock:
   build: .
   command: bin/clock
   environment:
-    - DATABASE_URL=postgres://postgres:password@postgres:5432/app
-    - REDIS_URL=redis://redis:password@redis:6379/0
   links:
-    - postgres
+    - database
     - redis
-postgres:
+database:
   image: convox/postgres
+  ports:
+    - 5432
 redis:
   image: convox/redis
+  ports:
+    - 6379
