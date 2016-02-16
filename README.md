@@ -30,6 +30,6 @@ Feedchirp assumes you're using PostgreSQL and Redis.
 
 ## Testing
 
-This was a big spike, so there are no tests. I know. I'm a bad person :(
+This was a big spike, so there are no tests.
 
-I won't add any new features without tests. If you'd like to contribute to this project, testing would be a great place to start.
+I won't add any new features without tests. If you'd like to contribute to this project, testing would be a great place to start :)
